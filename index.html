@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WC 2026 Predictor - Group Stage</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">🏆 WC 2026 ULTIMATE</div>
+        <div class="links">
+            <a href="groups.html" class="active">Group Stage</a>
+            <a href="knockout-r32.html">Round of 32</a>
+            <a href="knockout-finals.html">Quarter Finals+</a>
+        </div>
+    </nav>
+
+    <div class="container fade-in">
+        <header class="hero compact">
+            <h1>Group Stage</h1>
+            <p>Predict scores. Top 2 + 8 Best 3rd place teams advance.</p>
+            <div class="status-bar">
+                <span id="progress-text">0/72 Matches</span>
+                <button onclick="app.randomizeGroups()" class="btn sm">🎲 Randomize All</button>
+                <button onclick="app.resetGroups()" class="btn sm danger">Reset</button>
+            </div>
+        </header>
+
+        <div id="groups-grid" class="groups-grid">
+            </div>
+
+        <div class="third-place-container">
+            <h2>Best 3rd Place Teams Ranking</h2>
+            <table class="table third-table">
+                <thead>
+                    <tr><th>Rk</th><th>Team</th><th>Grp</th><th>Pts</th><th>GD</th><th>GF</th><th>Status</th></tr>
+                </thead>
+                <tbody id="third-place-body"></tbody>
+            </table>
+        </div>
+
+        <div class="actions">
+            <button onclick="app.finalizeGroups()" class="btn primary">Proceed to Knockouts ➔</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            app.initGroups();
+        });
+    </script>
+</body>
+</html>

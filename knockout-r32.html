@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WC 2026 Predictor - Round of 32</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">🏆 WC 2026 ULTIMATE</div>
+        <div class="links">
+            <a href="index.html">Group Stage</a>
+            <a href="knockout-r32.html" class="active">Round of 32</a>
+            <a href="knockout-finals.html">Quarter Finals+</a>
+        </div>
+    </nav>
+
+    <div class="container fade-in">
+        <header class="hero compact">
+            <h1>Round of 32</h1>
+            <p>Complete all 16 matches to advance to Quarter Finals.</p>
+            <div class="status-bar">
+                <button onclick="app.downloadJSON()" class="btn sm">📥 Save JSON</button>
+                <button onclick="app.downloadImage()" class="btn sm">🖼️ Save Image</button>
+                <button onclick="app.resetAll()" class="btn sm danger">Reset Tournament</button>
+            </div>
+        </header>
+
+        <div class="bracket-wrapper" id="bracket-view">
+            <div class="bracket-container" id="bracket-root">
+            </div>
+        </div>
+
+        <div class="actions">
+            <button onclick="app.saveAndGo('knockout-finals.html')" class="btn primary">Proceed to Quarter Finals ➔</button>
+        </div>
+    </div>
+
+    <div id="penalty-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Penalty Shootout</h3>
+            <p id="modal-match-info">Team A vs Team B</p>
+            <div class="penalty-inputs">
+                <input type="number" id="pen-a" placeholder="A">
+                <span>-</span>
+                <input type="number" id="pen-b" placeholder="B">
+            </div>
+            <button id="save-penalties" class="btn primary">Save</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            app.initKnockoutR32();
+        });
+    </script>
+</body>
+</html>
